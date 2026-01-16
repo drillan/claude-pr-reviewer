@@ -1,4 +1,5 @@
-name: Claude PR Review
+# PR作成時のみ自動レビュー、再レビューは@claudeで依頼
+name: Claude PR Review (On-Demand)
 
 on:
   pull_request:
@@ -25,4 +26,3 @@ jobs:
       - uses: drillan/claude-pr-reviewer@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          review_language: Japanese

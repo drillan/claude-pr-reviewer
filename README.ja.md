@@ -192,6 +192,18 @@ Bash(gh pr comment:*),Bash(gh pr review:*),Bash(gh pr diff:*),Bash(gh pr view:*)
       パフォーマンスへの影響も評価してください。
 ```
 
+### 繰り返しレビューの回避
+
+デフォルトでは、pushのたびにレビューが実行されます（`synchronize` イベント）。PR作成時のみ自動レビューし、再レビューは `@claude` メンションで依頼する場合：
+
+```yaml
+on:
+  pull_request:
+    types: [opened]  # synchronize を削除
+  issue_comment:
+    types: [created]
+```
+
 ## 必要な権限
 
 ワークフローに以下の権限を設定してください：
