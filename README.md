@@ -1,5 +1,8 @@
 # Claude PR Reviewer
 
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Claude%20PR%20Reviewer-blue?logo=github)](https://github.com/marketplace/actions/claude-pr-reviewer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [日本語](README.ja.md)
 
 A GitHub Action for automated PR reviews using Claude AI. It leverages the [pr-review-toolkit](https://github.com/anthropics/claude-code) plugin to provide comprehensive code reviews.

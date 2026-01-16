@@ -1,5 +1,8 @@
 # Claude PR Reviewer
 
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Claude%20PR%20Reviewer-blue?logo=github)](https://github.com/marketplace/actions/claude-pr-reviewer)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 [English](README.md)
 
 Claude AI を使用した自動 PR レビュー GitHub Action です。[pr-review-toolkit](https://github.com/anthropics/claude-code) プラグインを活用し、包括的なコードレビューを提供します。
