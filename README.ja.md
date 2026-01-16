@@ -11,6 +11,7 @@ Claude AI を使用した自動 PR レビュー GitHub Action です。[pr-revie
 - **エラーハンドリング検出**: サイレントエラーや不適切なエラー処理の発見
 - **型設計分析**: 型定義の品質とカプセル化の評価
 - **コメント正確性検証**: コードコメントと実装の整合性チェック
+- **対話的レビュー**: PR コメントで `@claude` とメンションすると追加レビューや質問への回答を取得
 
 ## 使用方法
 
@@ -83,7 +84,10 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'pull_request' ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude'))
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       contains(github.event.comment.body, '@claude') &&
+       github.event.comment.user.type != 'Bot')
     steps:
       - uses: drillan/claude-pr-reviewer@v1
         with:
