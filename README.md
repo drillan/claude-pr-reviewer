@@ -192,6 +192,18 @@ Two authentication methods are available:
       Also evaluate performance implications.
 ```
 
+### Avoid Repeated Reviews
+
+By default, reviews are triggered on every push (`synchronize` event). To review only on PR creation and re-review on demand via `@claude` mention:
+
+```yaml
+on:
+  pull_request:
+    types: [opened]  # Remove synchronize
+  issue_comment:
+    types: [created]
+```
+
 ## Required Permissions
 
 Add the following permissions to your workflow:
