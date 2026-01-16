@@ -14,6 +14,7 @@ A GitHub Action for automated PR reviews using Claude AI. It leverages the [pr-r
 - **Error Handling Detection**: Identify silent errors and improper error handling
 - **Type Design Analysis**: Assess type definition quality and encapsulation
 - **Comment Accuracy Verification**: Check consistency between code comments and implementation
+- **Interactive Review**: Mention `@claude` in PR comments to request additional reviews or ask questions
 
 ## Usage
 
@@ -86,7 +87,10 @@ jobs:
     runs-on: ubuntu-latest
     if: |
       github.event_name == 'pull_request' ||
-      (github.event_name == 'issue_comment' && contains(github.event.comment.body, '@claude'))
+      (github.event_name == 'issue_comment' &&
+       github.event.issue.pull_request &&
+       contains(github.event.comment.body, '@claude') &&
+       github.event.comment.user.type != 'Bot')
     steps:
       - uses: drillan/claude-pr-reviewer@v1
         with:
