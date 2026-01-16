@@ -1,6 +1,7 @@
 # Claude PR Reviewer
 
 [![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Claude%20PR%20Reviewer-blue?logo=github)](https://github.com/marketplace/actions/claude-pr-reviewer)
+[![GitHub release](https://img.shields.io/github/v/release/drillan/claude-pr-reviewer)](https://github.com/drillan/claude-pr-reviewer/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 [日本語](README.ja.md)
